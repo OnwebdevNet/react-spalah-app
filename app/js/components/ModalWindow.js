@@ -31,7 +31,7 @@ export default class Modal extends Component {
 export default class ModalWindow extends Component {
     constructor(props) {
         super(props);
-        this.props.note;
+        
         this.state = {
             isModalOpen: false
         };
@@ -48,13 +48,14 @@ export default class ModalWindow extends Component {
     }
 
     render() {
+        let onNoteAdd = this.props.onNoteAdd;
         return (
             <div className="wrapper">
                 <button onClick={this.openModal}>Add Note</button>
                 <Modal isOpen={this.state.isModalOpen}
                        transitionName="modal-anim">
                     <div className="body">
-                        <NoteEditor onNoteAdd={this.handleNoteAdd} />
+                        <NoteEditor onNoteAdd={onNoteAdd.bind(this)} />
                     </div>
                     <button onClick={this.closeModal}>Close modal</button>
                 </Modal>

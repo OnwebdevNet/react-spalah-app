@@ -48,7 +48,7 @@ export default class NotesApp extends Component {
         return (
             <div className="notes-app">
                 <h2 className="app-header">NotesApp</h2>
-                <ModalWindow/>
+                <ModalWindow newNote={this.state.newNote} onNoteAdd={this.handleNoteAdd}/>
                 <NotesGrid notes={this.state.notes} onNoteDelete={this.handleNoteDelete} />
             </div>
         );
