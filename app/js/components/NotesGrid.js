@@ -29,7 +29,7 @@ export default class NotesGrid extends Component {
         return (
             <div className="notes-grid" ref="grid">
                 {
-                    this.props.notes.map(function(note){
+                    this.props.notes.map((note) => {
                         return (
                             <Note
                                 key={note.id}

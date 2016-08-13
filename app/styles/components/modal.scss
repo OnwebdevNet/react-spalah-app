@@ -15,16 +15,14 @@ h1, h3 {
 }
 
 .modal {
-  width: 200px;
-  height: 100px;
+  width: 600px;
+  height: 300px;
   padding: 20px;
-
   position: absolute;
   z-index: 1;
   top: 50%;
   left: 50%;
-  margin: -70px 0 0 -120px;
-
+  margin: -150px 0 0 -300px;
   border: 1px solid #ccc;
   background: white;
 }
