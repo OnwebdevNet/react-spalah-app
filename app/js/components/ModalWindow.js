@@ -1,8 +1,8 @@
-import React         from 'react';
+import React, {Component, PropTypes} from 'react';
 import ReactCSSTransitionGroup from 'react/lib/ReactCSSTransitionGroup';
-import NoteList           from './NoteList';
+import NoteEditor from './NoteEditor';
 
-class Modal extends React.Component {
+export default class Modal extends Component {
     constructor(props) {
         super(props);
     }
@@ -28,13 +28,15 @@ class Modal extends React.Component {
     }
 }
 
-class ModalWindow extends React.Component {
+export default class ModalWindow extends Component {
     constructor(props) {
         super(props);
         this.props.note;
         this.state = {
             isModalOpen: false
         };
+        this.openModal = this.openModal.bind(this);
+        this.closeModal = this.closeModal.bind(this);
     }
     
     openModal() {
@@ -48,13 +50,11 @@ class ModalWindow extends React.Component {
     render() {
         return (
             <div className="wrapper">
-                <button onClick={this.openModal}>Open modal</button>
+                <button onClick={this.openModal}>Add Note</button>
                 <Modal isOpen={this.state.isModalOpen}
                        transitionName="modal-anim">
-                    <h3>My Modal</h3>
                     <div className="body">
-                        <input type="text" ref="myInput" />
-                        <button onClick={NoteList.addNote}>Add</button>
+                        <NoteEditor onNoteAdd={this.handleNoteAdd} />
                     </div>
                     <button onClick={this.closeModal}>Close modal</button>
                 </Modal>
@@ -62,5 +62,3 @@ class ModalWindow extends React.Component {
         );
     }
 }
-
-export default ModalWindow;

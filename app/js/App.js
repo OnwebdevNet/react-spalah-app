@@ -1,8 +1,7 @@
 'use strict';
 
 import React              from 'react';
-import NoteList           from './components/NoteList';
-import ModalWindow        from './components/ModalWindow';
+import NotesApp           from './components/NotesApp';
 
 
 let notes = JSON.parse(localStorage.getItem('notes')) || [];
@@ -26,8 +25,7 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <NoteList notes={notes} />
-        <ModalWindow/>
+        <NotesApp />
       </div>
     );
   }
