@@ -6,17 +6,11 @@ export default class Note extends Component {
     }
 
     render() {
-        let style = { backgroundColor: this.props.color };
+        var style = { backgroundColor: this.props.color };
         return (
-            <div className="note-editor">
-                <textarea
-                    placeholder="Enter your note here..."
-                    rows={5}
-                    className="textarea"
-                    value={this.state.text}
-                    onChange={this.handleTextChange}
-                />
-                <button className="add-button" onClick={this.handleNoteAdd}>Add</button>
+            <div className="note" style={style}>
+                <span className="delete-note" onClick={this.props.onDelete}> × </span>
+                {this.props.children}
             </div>
         );
     }
