@@ -1,0 +1,129 @@
+.wrapper {
+  width: 300px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+  border: 1px solid #ccc;
+  border-radius: 2px;
+  z-index: 0;
+}
+
+h1, h3 {
+  text-align: center;
+  margin: 0 0 20px 0;
+}
+
+.modal {
+  width: 600px;
+  height: 300px;
+  padding: 20px;
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  left: 50%;
+  margin: -150px 0 0 -300px;
+  border: 1px solid #ccc;
+  background: white;
+  text-align: right;
+}
+
+button {
+  width: 110px;
+  height: 35px;
+  line-height: 35px;
+  cursor: pointer;
+  display: inline-block;
+  background: yellow;
+  border-radius: 2px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  padding: 0;
+  color: #000;
+  text-decoration: none;
+  -webkit-transition: 0.3s ease;
+  transition: 0.3s ease;
+  border: 0;
+  overflow: hidden;
+  position: relative;
+  &:hover {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  }
+}
+
+button:after {
+  content: '';
+  display: block;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 120px;
+  height: 120px;
+  margin-left: -60px;
+  margin-top: -60px;
+  background: #000;
+  border-radius: 100%;
+  opacity: .6;
+
+  transform: scale(0);
+}
+
+@keyframes ripple {
+  0% {
+    transform: scale(0);
+  }
+  20% {
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1);
+  }
+}
+
+button:not(:active):after {
+  animation: ripple 1s ease-out;
+}
+
+.add-button {
+  position: absolute;
+  left: 20px;
+  bottom: 20px;
+}
+
+/* fixes initial animation run, without user input, on page load.
+ */
+button:after {
+  visibility: hidden;
+}
+
+button:focus:after {
+  visibility: visible;
+}
+
+/* Animation */
+
+.modal-anim-enter {
+  opacity: 0.00;
+  transform: scale(0.7);
+  transition: all 0.2s;
+}
+
+.modal-anim-enter.modal-anim-enter-active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.modal-anim-leave {
+  opacity: 1;
+  transform: scale(1);
+  transition: all 0.2s;
+}
+
+.modal.modal-anim-leave {
+  opacity: 0;
+  transform: scale(0);
+  transition: all 0.2s;
+}
+
+
+
+

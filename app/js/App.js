@@ -1,10 +1,5 @@
-'use strict';
-
 import React              from 'react';
 import NotesApp           from './components/NotesApp';
-
-
-let notes = JSON.parse(localStorage.getItem('notes')) || [];
 
 const propTypes = {
   params: React.PropTypes.object,

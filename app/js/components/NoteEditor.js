@@ -24,7 +24,6 @@ export default class NoteEditor extends Component {
     handleNoteAdd() {
         let newNote = {
             text: this.state.text,
-            color: 'yellow',
             id: Date.now()
         };
 

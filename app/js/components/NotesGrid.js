@@ -1,5 +1,6 @@
 import React, {Component, PropTypes} from 'react';
 import Note from './Note';
+import Masonry from 'masonry-layout';
 
 export default class NotesGrid extends Component {
     constructor(props) {
@@ -10,7 +11,7 @@ export default class NotesGrid extends Component {
         let grid = this.refs.grid;
         this.msnry = new Masonry( grid, {
             itemSelector: '.note',
-            columnWidth: 200,
+            columnWidth: 300,
             gutter: 10,
             isFitWidth: true
         });

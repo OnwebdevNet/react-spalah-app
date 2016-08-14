@@ -1,6 +1,10 @@
 body {
   font-family: Helvetica, sans-serif;
   color: $font-color--dark;
-  background-color: $background--light;
+  background-color: rgba(34,34,34,0.75);
   padding: $half-space;
+}
+
+* {
+  outline: none;
 }
