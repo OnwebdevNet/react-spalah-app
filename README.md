@@ -1,5 +1,8 @@
 React Spalah App
 ============
+
+---
+[Demo](http://notesapp.onwebdev.net/)
 ---
 
 ### Getting up and running
